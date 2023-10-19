@@ -6,6 +6,8 @@ if [ "$0" = "$BASH_SOURCE" ]; then
     exit 1
 fi
 
+THIS_DIR=$(dirname ${0})
+
 echo "Loading IOC environment for BL45P ..."
 
 # a mapping between genenric IOC repo roots and the related container registry
@@ -40,7 +42,7 @@ if ! ec --version &> /dev/null; then
         echo "ERROR: Please activate a virtualenv and re-run"
         return
     elif ! ec --version &> /dev/null; then
-        pip install epics-containers-cli
+        pip install -r ${THIS_DIR}/requirements.txt
     fi
 fi
 
