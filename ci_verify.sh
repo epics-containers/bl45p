@@ -21,7 +21,7 @@ do
 
     # verify that the instance can generate a schema
     ec -d dev launch --target runtime ${ioc} --execute \
-    'if [[ -d /epics/links/ibek/ ]]; then ibek ioc generate-schema /epics/links/ibek/*.ibek.support.yaml; fi'
+    'if [[ -d /epics/ibek/ ]]; then ibek ioc generate-schema /epics/ibek/*.ibek.support.yaml; fi'
 
     # verify that the instance can launch its IOC
 
