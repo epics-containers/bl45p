@@ -7,5 +7,10 @@ metadata:
 data:
 
 {{- $configPath := printf "services/%s/config/**" .Release.Name }}
+
+{{- if eq (.Files.Glob $configPath | len) 0 }}
+{{- fail (printf "%s %s" "no files found in the ioc instance config folder" $configPath) }}
+{{- end }}
+
 # contents of the ioc instance config folder
 {{ (.Files.Glob $configPath).AsConfig | indent 2 }}

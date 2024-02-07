@@ -51,7 +51,7 @@ source <(ec --show-completion ${SHELL})
 module unload pollux > /dev/null
 module load pollux > /dev/null
 # set the default namespace for kubectl and helm (for convenience only)
-kubectl config set-context --current --namespace=p47-iocs
+kubectl config set-context --current --namespace=bl45p
 # make sure the user has provided credentials
 kubectl version --short
 
