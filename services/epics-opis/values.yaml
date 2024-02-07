@@ -1,0 +1,14 @@
+epics-opis:
+  domain: bl45p
+
+  # this is a shared cluster beamline so use affinity to make this run on the
+  # the beamline node (p47 only has one node)
+  useAffinity: true
+
+  # extra toleration for the shared cluster training rigs
+  tolerations:
+    - key: "nodetype"
+      operator: "Equal"
+      value: "test-rig"
+      effect: "NoSchedule"
+  

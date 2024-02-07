@@ -1,0 +1,13 @@
+# A Helm Chart for deploying an IOC instance
+apiVersion: v2
+name: shared
+
+version: 2.0.0+b2
+
+type: application
+
+dependencies:
+  - name: ioc-instance
+    version: "2.0.0+b2"
+    #repository: "oci://ghcr.io/epics-containers"
+    repository: "file:///scratch/hgv27681/work/ec-helm-charts/Charts/ioc-instance"

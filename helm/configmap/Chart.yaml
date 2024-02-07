@@ -1,0 +1,7 @@
+# A Helm Chart for adding arbitrary configuration to a service instance
+apiVersion: v2
+name: configmap
+
+version: 2.0.0+b2
+
+type: application
